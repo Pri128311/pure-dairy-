@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PureDairy | Fresh Dairy Products Online</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥛</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">Pure<span>Dairy</span></a>
+        
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="cart.html" class="cart-icon">
+                🛒
+                <span class="cart-count" id="cart-count">0</span>
+            </a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">🥛 Fresh & Pure</span>
+            <h1>Fresh Dairy <span>Delivered Daily</span></h1>
+            <p>Experience the goodness of farm-fresh dairy products delivered straight to your doorstep. Pure, healthy, and delicious!</p>
+            <div class="hero-buttons">
+                <a href="products.html" class="btn btn-primary">
+                    Shop Now
+                    <span>→</span>
+                </a>
+                <a href="#categories" class="btn btn-secondary">
+                    Learn More
+                </a>
+            </div>
+        </div>
+        
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?w=600&h=600&fit=crop" alt="Fresh Dairy Products">
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="section" id="categories">
+        <div class="section-header">
+            <h2>Featured Categories</h2>
+            <p>Browse our fresh dairy categories</p>
+        </div>
+        
+        <div class="products-grid">
+            <div class="category-card">
+                <div class="category-icon">🥛</div>
+                <h3>Milk</h3>
+                <p>Fresh and pure milk varieties</p>
+                <a href="products.html" class="category-link">View Products →</a>
+            </div>
+            
+            <div class="category-card">
+                <div class="category-icon">🧈</div>
+                <h3>Paneer</h3>
+                <p>Fresh cottage cheese</p>
+                <a href="products.html" class="category-link">View Products →</a>
+            </div>
+            
+            <div class="category-card">
+                <div class="category-icon">🥛</div>
+                <h3>Curd & Yogurt</h3>
+                <p>Probiotic-rich dairy</p>
+                <a href="products.html" class="category-link">View Products →</a>
+            </div>
+            
+            <div class="category-card">
+                <div class="category-icon">🧀</div>
+                <h3>Butter & Cheese</h3>
+                <p>Premium dairy fats</p>
+                <a href="products.html" class="category-link">View Products →</a>
+            </div>
+            
+            <div class="category-card">
+                <div class="category-icon">🍦</div>
+                <h3>Ice Cream</h3>
+                <p>Creamily delicious</p>
+                <a href="products.html" class="category-link">View Products →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="section products-section" id="featured">
+        <div class="section-header">
+            <h2>Featured Products</h2>
+            <p>Our most popular dairy products, handpicked for you</p>
+        </div>
+        
+        <div class="products-grid" id="featured-grid">
+            <!-- Products will be dynamically rendered by JavaScript -->
+        </div>
+        
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="products.html" class="btn btn-primary">
+                View All Products
+                <span>→</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section" style="background: var(--bg-card);">
+        <div class="section-header">
+            <h2>Why Choose PureDairy</h2>
+            <p>We're committed to delivering the freshest dairy products</p>
+        </div>
+        
+        <div class="products-grid">
+            <div class="product-card" style="text-align: center; padding: 2rem;">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">🚚</div>
+                <h3 style="margin-bottom: 0.5rem;">Free Delivery</h3>
+                <p style="color: var(--text-grey);">On orders above ₹200</p>
+            </div>
+            
+            <div class="product-card" style="text-align: center; padding: 2rem;">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">🌿</div>
+                <h3 style="margin-bottom: 0.5rem;">100% Pure</h3>
+                <p style="color: var(--text-grey);">No artificial additives</p>
+            </div>
+            
+            <div class="product-card" style="text-align: center; padding: 2rem;">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">↩️</div>
+                <h3 style="margin-bottom: 0.5rem;">Easy Returns</h3>
+                <p style="color: var(--text-grey);">Within 24 hours</p>
+            </div>
+            
+            <div class="product-card" style="text-align: center; padding: 2rem;">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">💬</div>
+                <h3 style="margin-bottom: 0.5rem;">24/7 Support</h3>
+                <p style="color: var(--text-grey);">Always here to help</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About PureDairy</h4>
+                <p>Your trusted source for fresh dairy products. We deliver farm-fresh milk, paneer, curd, butter, cheese, ghee, and ice cream daily.</p>
+                <div class="social-links" style="margin-top: 1rem;">
+                    <a href="#">📘</a>
+                    <a href="#">📸</a>
+                    <a href="#">🐦</a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Customer Service</h4>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Shipping Policy</a></li>
+                    <li><a href="#">Returns & Exchanges</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>📧 info@puredairy.com</p>
+                <p>📞 +91 98765 43210</p>
+                <p>📍 123 Dairy Lane, Mumbai, India</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 PureDairy. All rights reserved. | Fresh Dairy Delivered Daily</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

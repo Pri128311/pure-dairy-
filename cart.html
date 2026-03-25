@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart | PureDairy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥛</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">Pure<span>Dairy</span></a>
+        
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="cart.html" class="cart-icon">
+                🛒
+                <span class="cart-count" id="cart-count">0</span>
+            </a></li>
+        </ul>
+    </nav>
+
+    <!-- Cart Page -->
+    <section class="cart-page">
+        <div class="cart-container">
+            <div class="cart-header">
+                <h1>Your Cart</h1>
+                <p style="color: var(--text-grey);">Review your items before checkout</p>
+            </div>
+
+            <!-- Empty Cart Message -->
+            <div class="empty-cart" id="empty-cart">
+                <div class="empty-cart-icon">🛒</div>
+                <h2>Your cart is empty</h2>
+                <p>Looks like you haven't added any items to your cart yet.</p>
+                <a href="products.html" class="btn btn-primary">
+                    Start Shopping
+                    <span>→</span>
+                </a>
+            </div>
+
+            <!-- Cart Content -->
+            <div id="cart-content">
+                <!-- Cart Items - Dynamically rendered by JavaScript -->
+                <div class="cart-items" id="cart-items">
+                    <!-- Cart items will be dynamically rendered by JavaScript -->
+                </div>
+
+                <!-- Cart Summary -->
+                <div class="cart-summary">
+                    <h3>Order Summary</h3>
+                    <p style="color: var(--text-grey); margin-bottom: 1rem;">
+                        <span id="item-count">0</span> items in cart
+                    </p>
+                    <div class="cart-total" id="cart-total">₹0</div>
+                    <button class="checkout-btn" onclick="proceedToCheckout()">
+                        Proceed to Checkout
+                        <span>→</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" style="margin-top: 4rem;">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About PureDairy</h4>
+                <p>Your trusted source for fresh dairy products. We deliver farm-fresh milk, paneer, curd, butter, cheese, ghee, and ice cream daily.</p>
+                <div class="social-links" style="margin-top: 1rem;">
+                    <a href="#">📘</a>
+                    <a href="#">📸</a>
+                    <a href="#">🐦</a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Customer Service</h4>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Shipping Policy</a></li>
+                    <li><a href="#">Returns & Exchanges</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>📧 info@puredairy.com</p>
+                <p>📞 +91 98765 43210</p>
+                <p>📍 123 Dairy Lane, Mumbai, India</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 PureDairy. All rights reserved. | Fresh Dairy Delivered Daily</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Update item count in cart summary
+        function updateItemCount() {
+            const itemCountElement = document.getElementById('item-count');
+            if (itemCountElement) {
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                itemCountElement.textContent = cart.length;
+            }
+        }
+
+        // Proceed to checkout function
+        function proceedToCheckout() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            if (cart.length === 0) {
+                alert('Your cart is empty! Please add some items first.');
+            } else {
+                alert('Thank you for your order! This is a demo checkout.');
+                // Clear cart after checkout
+                localStorage.setItem('cart', '[]');
+                updateCartCount();
+                renderCart();
+                updateItemCount();
+            }
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            updateCartCount();
+            renderCart();
+            updateItemCount();
+        });
+    </script>
+</body>
+</html>
+
